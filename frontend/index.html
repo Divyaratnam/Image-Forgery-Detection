@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Forgery Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>🔍 Image Forgery Detection System</h1>
+    <p>GAN + Swin Transformer + EfficientNet</p>
+</header>
+
+<!-- NAVBAR -->
+<nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('analysis')">Analysis</a>
+    <a onclick="showSection('download')">Download</a>
+</nav>
+
+<!-- HOME SECTION -->
+<!-- HOME SECTION -->
+<section id="home" class="active">
+    <div class="content">
+
+        <h2>📘 Project Overview</h2>
+
+        <p>
+            This project focuses on detecting digital image forgery using deep learning
+            techniques. The system classifies images as <b>forged</b> or <b>authentic</b>.
+        </p>
+
+        <ul>
+            <li>GAN for data augmentation</li>
+            <li>Swin Transformer for hierarchical feature extraction</li>
+            <li>EfficientNet for optimized classification</li>
+        </ul>
+
+        <h2 style="margin-top:30px;">📄 Project Report (Summary)</h2>
+
+        <div class="report">
+            Digital image forgery has become a major challenge with the widespread
+            availability of image editing tools. This system proposes a GAN-augmented
+            Swin Transformer and EfficientNet architecture to enhance forgery detection
+            accuracy.
+            <br><br>
+            The system preprocesses images, performs feature extraction, and classifies
+            images efficiently. Experimental results show high accuracy and robustness
+            against common forgery techniques such as copy-move and splicing.
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ANALYSIS SECTION -->
+<section id="analysis">
+    <div class="content">
+        <h2>📤 Image Analysis</h2>
+
+        <input type="file" id="imageInput" accept="image/*">
+        <br><br>
+
+        <img id="preview" class="preview-img">
+
+        <button onclick="analyzeImage()">Analyze Image</button>
+
+        <!-- ANALYSIS RESULT TEXT -->
+        <div class="analysis-box" id="analysisBox">
+            <p id="finalResult"></p>
+            <p id="confidenceText"></p>
+
+            <!-- PROBABILITY BARS -->
+            <div class="bar">
+                <span>Forged</span>
+                <div class="progress">
+                    <div id="forgedBar"></div>
+                </div>
+                <span id="forgedPercent"></span>
+            </div>
+
+            <div class="bar">
+                <span>Genuine</span>
+                <div class="progress">
+                    <div id="genuineBar"></div>
+                </div>
+                <span id="genuinePercent"></span>
+            </div>
+        </div>
+
+        <!-- IMAGE DETAILS (NEW SECTION) -->
+        <div id="detailsBox" class="analysis-box" style="display:none;">
+            <h3>🔎 Image Analysis Details</h3>
+
+            <p><b>Image Name :</b> <span id="imgName"></span></p>
+            <p><b>Image Format :</b> <span id="imgFormat"></span></p>
+            <p><b>Resolution :</b> <span id="imgResolution"></span></p>
+            <p><b>File Size :</b> <span id="imgSize"></span></p>
+
+            <hr>
+
+            <p><b>Result :</b> <span id="imgResult"></span></p>
+            <p><b>Confidence :</b> <span id="imgConfidence"></span></p>
+            <p><b>Model :</b> GAN + Swin Transformer + EfficientNet</p>
+            <p><b>Status :</b> Completed</p>
+        </div>
+    </div>
+</section>
+
+<!-- DOWNLOAD SECTION -->
+<section id="download">
+    <div class="content">
+        <h2>⬇ Download Analysis Report</h2>
+
+        <p id="downloadMsg" class="download-msg">
+            Please analyze an image first to download the report.
+        </p>
+
+        <button id="downloadBtn" onclick="downloadReport()" disabled>
+            Download Report
+        </button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
